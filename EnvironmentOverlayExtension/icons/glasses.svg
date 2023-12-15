@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <!-- Sunglass frame -->
+  <rect x="44" y="27" width="112" height="10" fill="#404040" rx="5"/>
+  <rect x="90" y="42" width="20" height="3" fill="#404040" />
+
+  <!-- Left lens -->
+  <ellipse cx="72" cy="50" rx="25" ry="20" fill="#E74C3C"/>
+  <ellipse cx="72" cy="50" rx="25" ry="20" fill="none" stroke="#404040" stroke-width="2"/>
+
+  <!-- Right lens -->
+  <ellipse cx="128" cy="50" rx="25" ry="20" fill="#6581B2"/>
+  <ellipse cx="128" cy="50" rx="25" ry="20" fill="none" stroke="#404040" stroke-width="2"/>
+
+<!-- Glare marks -->
+  <line x1="65" y1="40" x2="80" y2="60" stroke="#FF7979" stroke-width="2" />
+  <line x1="75" y1="37" x2="90" y2="57" stroke="#FF7979" stroke-width="2" />
+
+  <line x1="120" y1="40" x2="135" y2="60" stroke="#8FA3C9" stroke-width="2" />
+  <line x1="130" y1="37" x2="145" y2="57" stroke="#8FA3C9" stroke-width="2" />
+
+</svg>

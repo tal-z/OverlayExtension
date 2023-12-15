@@ -1,0 +1,133 @@
+body {
+    font-family: 'Arial', sans-serif;
+    width: 300px;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #3498db;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .button-config {
+    margin-bottom: 20px;
+  }
+  
+  .button-config label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .add-button, #saveSettings {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-button:hover, #saveSettings:hover {
+    background-color: #217dbb;
+  }
+  
+  #buttonConfigs {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for dynamically added buttons */
+  .button-config-item {
+    margin-bottom: 10px;
+  }
+  
+  .button-config-item label {
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Style for the underline effect on links */
+  .add-button {
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .add-button:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #3498db;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+  
+  .add-button:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .button-config-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-config-item input {
+    width: calc(100% - 22px); /* Adjust width to fit container */
+    margin-bottom: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .button-config-item input[type="color"] {
+    width: 100%;
+    height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px; /* Make the button rounded */
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    padding: 0px;
+  }
+  
+  .button-config-item button {
+    cursor: pointer;
+    padding: 8px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-config-item button:hover {
+    background-color: #c0392b;
+  }

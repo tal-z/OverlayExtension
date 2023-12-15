@@ -1,0 +1,45 @@
+/* Add this to your popup.css file */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.popup-container {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  color: #3498db;
+}
+
+p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+#buttonContainer {
+  margin-top: 20px;
+}
+
+.button, /* Apply the styles to both static and dynamic buttons */
+.dynamic-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 3px; /* Make the button rounded */
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover,
+.dynamic-button:hover {
+  background-color: #217dbb;
+}
