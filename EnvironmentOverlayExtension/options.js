@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Elements
   var buttonConfigsContainer = document.getElementById('buttonConfigs');
   var addButton = document.getElementById('addButton');
   var saveSettingsButton = document.getElementById('saveSettings');
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderButtonConfigs(buttonConfigs);
   });
 
-  // Add new button configuration when "Add Button" is clicked
+  // Event listeners
   addButton.addEventListener('click', function() {
     addButtonConfig();
   });
@@ -32,24 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add a new button configuration
   function addButtonConfig(label = '', color = '#3498db') {
     var buttonConfigDiv = document.createElement('div');
-    buttonConfigDiv.classList.add('button-config-item'); // Use the new class for styling
+    buttonConfigDiv.classList.add('button-config-item');
 
-    var labelInput = document.createElement('input');
-    labelInput.type = 'text';
-    labelInput.placeholder = 'Button Label';
-    labelInput.value = label;
-    labelInput.classList.add('button-label');
+    // Input elements
+    var labelInput = createInput('text', 'Button Label', label, 'button-label');
+    var colorInput = createInput('color', '', color);
 
-    var colorInput = document.createElement('input');
-    colorInput.type = 'color';
-    colorInput.value = color;
-
-    var removeButton = document.createElement('button');
-    removeButton.textContent = 'Remove';
-    removeButton.addEventListener('click', function() {
+    // Remove button
+    var removeButton = createRemoveButton(function() {
       buttonConfigDiv.remove();
     });
 
+    // Append elements
     buttonConfigDiv.appendChild(labelInput);
     buttonConfigDiv.appendChild(colorInput);
     buttonConfigDiv.appendChild(removeButton);
@@ -75,5 +70,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     return buttonConfigs;
+  }
+
+  // Utility function to create input elements
+  function createInput(type, placeholder, value, className) {
+    var input = document.createElement('input');
+    input.type = type;
+    input.placeholder = placeholder;
+    input.value = value;
+    if (className) input.classList.add(className);
+    return input;
+  }
+
+  // Utility function to create remove button
+  function createRemoveButton(callback) {
+    var removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', callback);
+    return removeButton;
   }
 });

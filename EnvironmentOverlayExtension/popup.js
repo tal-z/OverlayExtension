@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   var buttonContainer = document.getElementById('buttonContainer');
+  // Update settings link
+  var settingsLink = document.getElementById('settingsLink');
+  settingsLink.href = window.location.href.replace("popup", "options");
 
   // Load button configurations on page load
   chrome.storage.sync.get(['buttonConfigs'], function(result) {

@@ -28,7 +28,8 @@ p {
 .button, /* Apply the styles to both static and dynamic buttons */
 .dynamic-button {
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 10px 0; /* Adjusted padding to set the same width for all buttons */
+  width: 100%; /* Set the width to 100% to ensure consistency */
   background-color: #3498db;
   color: #fff;
   border: none;
