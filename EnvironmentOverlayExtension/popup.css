@@ -4,12 +4,17 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 20px;
+  background-color: #f7f7f7;
 }
 
 .popup-container {
-  max-width: 300px;
+  min-width: 300px;
   margin: 0 auto;
   text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 h1 {
@@ -25,22 +30,32 @@ p {
   margin-top: 20px;
 }
 
-.button, /* Apply the styles to both static and dynamic buttons */
+.button,
 .dynamic-button {
   cursor: pointer;
-  padding: 10px 0; /* Adjusted padding to set the same width for all buttons */
-  width: 100%; /* Set the width to 100% to ensure consistency */
+  padding: 10px 0;
+  width: 100%;
   background-color: #3498db;
   color: #fff;
   border: none;
-  border-radius: 3px; /* Make the button rounded */
+  border-radius: 3px;
   margin-top: 10px;
   display: inline-block;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for hover effect */
 }
 
 .button:hover,
 .dynamic-button:hover {
   background-color: #217dbb;
+  transform: scale(1.05); /* Scale the button on hover for a subtle effect */
+}
+
+/* Placeholder for the image */
+#popupImage {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-top: 20px;
 }
