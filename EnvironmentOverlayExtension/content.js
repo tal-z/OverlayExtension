@@ -48,15 +48,32 @@ async function getOverlayColor(buttonLabel) {
       resolve(buttonConfigs.find(config => config.label === buttonLabel));
     });
   });
-
-  return config ? addAlpha(config.color, 0.25) : null;
+  let alphaColor = config ? addAlpha(config.color, 0.25) : null;  
+  console.log(alphaColor);
+  return alphaColor;
 }
 
 // Set overlay color on the page
-function setOverlayColor(color) {
-  if (!overlayDiv) {
-    chrome.storage.sync.set({ [tabId]: color });  
-    // Create overlay div if it doesn't exist
+async function setOverlayColor(color) {
+  console.log("setting overlay div");
+  currentColor = await new Promise(resolve => {
+    chrome.storage.sync.get({ [tabId]: null }, function(storedColor) {
+      console.log(color, storedColor, tabId)
+      resolve(storedColor[tabId]);
+    });
+  })
+
+
+  if (!overlayDiv || currentColor !== color) {
+    chrome.storage.sync.set({ [tabId]: color });
+    // If overlayDiv doesn't exist or the color is different
+    if (overlayDiv) {
+      // Remove the existing overlay
+      overlayDiv.remove();
+      overlayDiv = null;
+    }
+
+    // Create a new overlay with the specified color
     overlayDiv = document.createElement('div');
     overlayDiv.style.position = 'fixed';
     overlayDiv.style.top = '0';
@@ -68,11 +85,9 @@ function setOverlayColor(color) {
     document.body.appendChild(overlayDiv);
     overlayDiv.style.backgroundColor = color;
   } else {
-    // Remove overlay div if it exists
-    if (overlayDiv) {
-      chrome.storage.sync.set({ [tabId]: null });  
-      overlayDiv.remove();
-      overlayDiv = null;
-    }
+    // The color matches the current color, so remove the overlay
+    chrome.storage.sync.set({ [tabId]: null });
+    overlayDiv.remove();
+    overlayDiv = null;
   }
-}
+};
