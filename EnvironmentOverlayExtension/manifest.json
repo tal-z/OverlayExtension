@@ -6,7 +6,7 @@
   "permissions": ["activeTab", "storage"],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icons/venn.png"
+    "default_icon": "icons/shades.png"
   },
   "options_page": "options.html",
   "content_scripts": [
