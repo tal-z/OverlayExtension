@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     button.addEventListener('click', function() {
       chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
         var activeTab = tabs[0];
-        chrome.tabs.sendMessage(activeTab.id, { action: 'buttonClicked', label: label });
+        chrome.tabs.sendMessage(activeTab.id, { action: 'buttonClicked', label: label, tabId: activeTab.id });
       });
     });
 
