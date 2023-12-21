@@ -1,5 +1,5 @@
 # Shades! The Browser Overlay Extension
-![image]("https://github.com/tal-z/OverlayExtension/blob/main/EnvironmentOverlayExtension/icons/shades_nobg.png")
+![image](https://github.com/tal-z/OverlayExtension/blob/main/EnvironmentOverlayExtension/icons/shades.svg)
 
 
 ## What's up with Shades?
