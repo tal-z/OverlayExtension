@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
   saveSettingsButton.addEventListener('click', function() {
     var buttonConfigs = getButtonConfigs();
     chrome.storage.sync.set({ buttonConfigs: buttonConfigs }, function() {
-      console.log('Settings saved:', { buttonConfigs: buttonConfigs });
     });
   });
 

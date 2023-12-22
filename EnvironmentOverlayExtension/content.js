@@ -6,7 +6,6 @@ var tabId = null;
 async function getTabId() {
   return new Promise((resolve) => {
     chrome.runtime.sendMessage({ action: "getTabId" }, function(response) {
-      console.log("Tab ID received:", response.tabId);
       resolve(response.tabId);
     });
   });
@@ -24,7 +23,6 @@ async function getTabId() {
 
 // Listen for messages from the popup
 chrome.runtime.onMessage.addListener(async function (request) {
-  console.log(request);
   // Handle button click action
   if (request.action === 'buttonClicked') {
     var clickedButtonLabel = request.label;
@@ -49,16 +47,13 @@ async function getOverlayColor(buttonLabel) {
     });
   });
   let alphaColor = config ? addAlpha(config.color, 0.25) : null;  
-  console.log(alphaColor);
   return alphaColor;
 }
 
 // Set overlay color on the page
 async function setOverlayColor(color) {
-  console.log("setting overlay div");
   currentColor = await new Promise(resolve => {
     chrome.storage.sync.get({ [tabId]: null }, function(storedColor) {
-      console.log(color, storedColor, tabId)
       resolve(storedColor[tabId]);
     });
   })
