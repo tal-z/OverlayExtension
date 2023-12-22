@@ -1,4 +1,4 @@
-# Shades <img src="https://github.com/tal-z/OverlayExtension/blob/main/EnvironmentOverlayExtension/icons/shades.svg" style="width: 5%;" /></br> The Browser Overlay Extension
+# Shades <img src="https://github.com/tal-z/OverlayExtension/blob/main/EnvironmentOverlayExtension/icons/shades.svg" style="width: 50px; height: 20px; object-fit: cover;" /></br> The Browser Overlay Extension
 
 ## What's up with Shades?
 Shades is a Chrome browser extension that allows users to configure and apply semi-opaque overlays on their browser tabs. This can be useful for web developers who are working on applications where development occurs in multiple environments.
